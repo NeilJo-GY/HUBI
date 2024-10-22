@@ -3,35 +3,21 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
+  provider = "postgresql"
+  url = env("hubi_PRISMA_URL")
+  directUrl = env("hubi_URL_NON_POOLING")
 }
 
-// Posts table
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String   @db.VarChar(255)
-  createdAt DateTime @default(now()) @db.Timestamp(6)
-  content   String?
-  published Boolean  @default(false)
-  authorId  Int
-  author      User     @relation(fields: [authorId], references: [id])
-}
-
-// Profiles table
-model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  userId Int     @unique
-  user   User    @relation(fields: [userId], references: [id])
-}
-
-// Users table
-model User {
-  id      Int      @id @default(autoincrement())
-  name    String?  @db.VarChar(255)
-  email   String   @unique @db.VarChar(255)
-  posts   Post[]
-  profile Profile?
+model Reservation {
+  id              Int      @id @default(autoincrement())
+  userAddress     String
+  grantId         Int
+  reservedAmount  String
+  timeAgo         String
+  addressLink     String
+  txLink          String
+  timestamp       Int
+  transactionHash String   @unique
+  linkColor       String
+  createdAt       DateTime @default(now())
 }

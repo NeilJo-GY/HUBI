@@ -1,12 +1,14 @@
 // RecentReservationList.tsx
 import React, { useMemo } from 'react';
-import { Reservation } from '@/app/lib/useReservations';
+import { useReservations } from '@/app/lib/useReservations2';
 
-interface RecentReservationListProps {
-    reservations: Reservation[];
-}
+export default function RecentReservationList() {
+    const { reservations, isLoading } = useReservations();
 
-export default function RecentReservationList({ reservations }: RecentReservationListProps) {
+    if (isLoading) {
+        return <p>Loading...</p>;
+    }
+
     if (reservations.length === 0) {
         return (
             <div className="mt-12 mb-8 text-left w-full max-w-lg bg-gray-900 rounded-lg p-6 shadow-lg">

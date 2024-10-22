@@ -4,13 +4,13 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Button, Spin } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { useActiveAccount } from "thirdweb/react";
-import { GrantProvider } from '@/app/lib/GrantProvider2';
-import { useGrantData } from '@/app/lib/useGrantData2';
-import { useReservations } from '@/app/lib/useReservations';
+import { GrantProvider } from '@/app/lib/GrantProvider';
+import { useGrantData } from '@/app/lib/useGrantData';
+import { useReservations } from '@/app/lib/useReservations2';
 import Navbar from '@/app/components/navbar';
 import HorizontalTimeline from '@/app/components/HorizontalTimeline/HorizontalTimeline';
 import GrantCard from '@/app/components/GrantCard';
-import RecentReservationList from '@/app/components/ReservationList';
+import RecentReservationList from '@/app/components/ReservationList2';
 
 export default function PreGrant() {
   const activeAccount = useActiveAccount();
