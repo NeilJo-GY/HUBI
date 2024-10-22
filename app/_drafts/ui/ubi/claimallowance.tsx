@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Typography, Alert, Space, Divider, Form, Input, Table, Spin } from 'antd';
 import moment from 'moment';
-import ClaimButton from '@/app/ui/ubi/claimbutton'; // 导入ClaimButton组件
+import ClaimButton from '@/app/_drafts/ui/ubi/claimbutton'; // 导入ClaimButton组件
 import { useAccount } from 'wagmi'
 import { config } from '@/app/lib/wagmi';
 

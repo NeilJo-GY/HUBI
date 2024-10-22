@@ -2,9 +2,9 @@
 import dynamic from 'next/dynamic';
 import moment from 'moment';
 
-const DynamicMixedChart = dynamic(() => import('@/app/ui/ubi/mixedchart'), { ssr: false });
-const DynamicUbiAllowanceCard = dynamic(() => import('@/app/ui/ubi/allowancecard'), { ssr: false });
-const DynamicClaimAllowance = dynamic(() => import('@/app/ui/ubi/claimallowance'), { ssr: false });
+const DynamicMixedChart = dynamic(() => import('@/app/_drafts/ui/ubi/mixedchart'), { ssr: false });
+const DynamicUbiAllowanceCard = dynamic(() => import('@/app/_drafts/ui/ubi/allowancecard'), { ssr: false });
+const DynamicClaimAllowance = dynamic(() => import('@/app/_drafts/ui/ubi/claimallowance'), { ssr: false });
 
 const exampleData = {
   period: 1,
