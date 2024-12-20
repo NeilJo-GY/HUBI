@@ -25,6 +25,37 @@ const GrantCard: React.FC<GrantCardProps> = ({ selectedGrantId, address }) => {
   console.log('Current Grant:', grant);
   */
 
+  // 计算 grant 状态
+  const status = useMemo(() => {
+    if (!grant) return null; // 添加空值检查
+    const now = Math.floor(Date.now() / 1000);
+    if (now < grant.startTimestamp) return "future";
+    if (now > grant.endTimestamp) return "past";
+    return "current";
+  }, [grant]);
+
+  const countdownDate = useMemo(() => {
+    if (!grant) return null; // 添加空值检查
+    const timestamp = status === "future" ? grant.startTimestamp : grant.endTimestamp;
+    return new Date(timestamp * 1000);
+  }, [status, grant]);
+
+  // Memoize the renderer function
+  const renderer = useCallback(
+    ({ days, hours, minutes, seconds, completed }: CountdownRenderProps) => {
+      if (completed) {
+        return <span>{status === "future" ? 'Started' : 'Ended'}</span>;
+      } else {
+        return (
+          <span>
+            {days}d {hours}h {minutes}m {seconds}s
+          </span>
+        );
+      }
+    },
+    [status]
+  );
+
   // 如果正在加载或没有找到对应的 grant，显示加载状态
   if (isLoading || !grant) {
     return (
@@ -43,46 +74,12 @@ const GrantCard: React.FC<GrantCardProps> = ({ selectedGrantId, address }) => {
     amount
   } = grant;
 
-  // 计算 grant 状态
-  const status = useMemo(() => {
-    const now = Math.floor(Date.now() / 1000);
-    if (now < startTimestamp) return "future";
-    if (now > endTimestamp) return "past";
-    return "current";
-  }, [startTimestamp, endTimestamp]);
-
   const isPastGrant = status === "past";
   const isCurrentGrant = status === "current";
   const isFutureGrant = status === "future";
 
   const userReservedAmount = userReservations?.[grantId] || 0;
   const hasReserved = userReservedAmount > 0;
-
-  const countdownDate = useMemo(() => {
-    const timestamp = isFutureGrant ? startTimestamp : endTimestamp;
-    return new Date(timestamp * 1000);
-  }, [isFutureGrant, startTimestamp, endTimestamp]);
-
-  // Memoize the renderer function
-  const renderer = useCallback(
-    ({ days, hours, minutes, seconds, completed }: CountdownRenderProps) => {
-      if (completed) {
-        return <span>{isFutureGrant ? 'Started' : 'Ended'}</span>;
-      } else {
-        return (
-          <span>
-            {days}d {hours}h {minutes}m {seconds}s
-          </span>
-        );
-      }
-    },
-    [isFutureGrant]
-  );
-
-  // Now, handle the cases where grants or grant are undefined
-  if (!grants || grants.length === 0 || !grant || !userReservations) {
-    return null;
-  }
 
   const renderActionButton = () => {
     if (!address) {
@@ -159,7 +156,7 @@ const GrantCard: React.FC<GrantCardProps> = ({ selectedGrantId, address }) => {
         {new Date(startTimestamp * 1000).toLocaleString()} - {new Date(endTimestamp * 1000).toLocaleString()}
       </p>
 
-      {(isCurrentGrant || isFutureGrant) && (
+      {(isCurrentGrant || isFutureGrant) && countdownDate && (
         <div className="text-7xl font-extrabold text-red-500 mb-8 drop-shadow-lg shadow-red-500">
           <Countdown date={countdownDate} renderer={renderer} />
         </div>

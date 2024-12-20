@@ -43,7 +43,7 @@ export default function Home() {
             HID is HUBI’s secure digital identity solution, allowing individuals to prove they are real and unique while fully protecting their privacy. Through HID, people gain access to HUBI’s services, including UBI, without compromising personal data.
           </p>
           <p className="text-lg text-gray-700 mb-4">
-            HUBI's vision is to promote a balanced and inclusive future, where AI benefits all, and opportunities for growth and fulfillment are accessible to everyone.
+            HUBI’s vision is to promote a balanced and inclusive future, where AI benefits all, and opportunities for growth and fulfillment are accessible to everyone.
           </p>
         </div>
       </main>

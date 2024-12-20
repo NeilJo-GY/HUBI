@@ -56,4 +56,7 @@ const Dot = React.forwardRef<HTMLDivElement, DotProps>((props, ref) => {
   );
 });
 
+// 为组件设置 displayName
+Dot.displayName = 'Dot';
+
 export default Dot;
