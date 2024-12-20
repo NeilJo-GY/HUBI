@@ -1,0 +1,278 @@
+{
+    "dependencies": [
+        "@ant-design/web3-icons",
+        "@headlessui/react",
+        "@upstash/redis",
+        "abitype",
+        "d3-scale",
+        "d3-shape",
+        "d3-time",
+        "i18next",
+        "inter-ui",
+        "lucide-react",
+        "moment",
+        "pg",
+        "react-chrono",
+        "react-query",
+        "recharts"
+    ],
+    "devDependencies": [
+        "@graphql-codegen/cli",
+        "@graphql-codegen/typescript",
+        "@graphql-codegen/typescript-operations",
+        "@graphql-codegen/typescript-react-apollo",
+        "@types/d3-scale",
+        "@types/d3-shape",
+        "@types/d3-time",
+        "@types/node",
+        "@types/pg",
+        "@types/react-dom",
+        "autoprefixer",
+        "postcss",
+        "ts-node"
+    ],
+    "missing": {
+        "@ant-design/icons": [
+            "/Users/guyue/Hubi/app/pre-grant/test/page.tsx",
+            "/Users/guyue/Hubi/app/apps/page.tsx"
+        ]
+    },
+    "using": {
+        "eslint-config-next": [
+            "/Users/guyue/Hubi/.eslintrc.json"
+        ],
+        "eslint": [
+            "/Users/guyue/Hubi/.eslintrc.json"
+        ],
+        "typescript": [
+            "/Users/guyue/Hubi/.eslintrc.json",
+            "/Users/guyue/Hubi/env/server.ts",
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/lib/wagmi.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncCurrent.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncCycles.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncGlobal.ts"
+        ],
+        "glob": [
+            "/Users/guyue/Hubi/check-dependencies.js",
+            "/Users/guyue/Hubi/check-devDependencies.js"
+        ],
+        "@prisma/client": [
+            "/Users/guyue/Hubi/index.mjs",
+            "/Users/guyue/Hubi/app/src/lib/prisma.ts"
+        ],
+        "prisma": [
+            "/Users/guyue/Hubi/index.mjs",
+            "/Users/guyue/Hubi/app/src/lib/prisma.ts"
+        ],
+        "next": [
+            "/Users/guyue/Hubi/package.json",
+            "/Users/guyue/Hubi/app/page.tsx",
+            "/Users/guyue/Hubi/app/src/components/Header.tsx",
+            "/Users/guyue/Hubi/app/src/components/navbar.tsx",
+            "/Users/guyue/Hubi/app/api/verify-recaptcha/route.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/route.ts",
+            "/Users/guyue/Hubi/app/api/graphql/route.ts"
+        ],
+        "tsx": [
+            "/Users/guyue/Hubi/package.json"
+        ],
+        "react": [
+            "/Users/guyue/Hubi/package.json",
+            "/Users/guyue/Hubi/package.json",
+            "/Users/guyue/Hubi/app/page.tsx",
+            "/Users/guyue/Hubi/app/src/lib/apolloClient.ts",
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/lib/wagmi.ts",
+            "/Users/guyue/Hubi/app/src/hooks/useGrantData.ts",
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts",
+            "/Users/guyue/Hubi/app/src/graphql/fragments.ts",
+            "/Users/guyue/Hubi/app/src/graphql/queries.ts",
+            "/Users/guyue/Hubi/app/src/generated/graphql.ts",
+            "/Users/guyue/Hubi/app/src/contexts/GrantContext.tsx",
+            "/Users/guyue/Hubi/app/src/components/GrantCard.tsx",
+            "/Users/guyue/Hubi/app/src/components/Header.tsx",
+            "/Users/guyue/Hubi/app/src/components/ReservationList.tsx",
+            "/Users/guyue/Hubi/app/src/components/ReserveButton.tsx",
+            "/Users/guyue/Hubi/app/src/components/navbar.tsx",
+            "/Users/guyue/Hubi/app/src/components/HorizontalTimeline/HorizontalTimeline.tsx",
+            "/Users/guyue/Hubi/app/src/components/HorizontalTimeline/TimelineDot.tsx",
+            "/Users/guyue/Hubi/app/src/components/HorizontalTimeline/TimelineLine.tsx",
+            "/Users/guyue/Hubi/app/pre-grant/test/page.tsx",
+            "/Users/guyue/Hubi/app/apps/page.tsx",
+            "/Users/guyue/Hubi/app/api/verify-recaptcha/route.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/route.ts",
+            "/Users/guyue/Hubi/app/api/graphql/route.ts"
+        ],
+        "react-dom": [
+            "/Users/guyue/Hubi/package.json",
+            "/Users/guyue/Hubi/app/page.tsx",
+            "/Users/guyue/Hubi/app/src/lib/apolloClient.ts",
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts",
+            "/Users/guyue/Hubi/app/src/graphql/fragments.ts",
+            "/Users/guyue/Hubi/app/src/graphql/queries.ts",
+            "/Users/guyue/Hubi/app/src/generated/graphql.ts",
+            "/Users/guyue/Hubi/app/src/components/GrantCard.tsx",
+            "/Users/guyue/Hubi/app/src/components/Header.tsx",
+            "/Users/guyue/Hubi/app/src/components/navbar.tsx",
+            "/Users/guyue/Hubi/app/pre-grant/test/page.tsx",
+            "/Users/guyue/Hubi/app/apps/page.tsx",
+            "/Users/guyue/Hubi/app/api/verify-recaptcha/route.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/route.ts",
+            "/Users/guyue/Hubi/app/api/graphql/route.ts"
+        ],
+        "sass": [
+            "/Users/guyue/Hubi/package.json",
+            "/Users/guyue/Hubi/app/page.tsx",
+            "/Users/guyue/Hubi/app/src/components/Header.tsx",
+            "/Users/guyue/Hubi/app/src/components/navbar.tsx",
+            "/Users/guyue/Hubi/app/api/verify-recaptcha/route.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/route.ts",
+            "/Users/guyue/Hubi/app/api/graphql/route.ts"
+        ],
+        "tailwindcss": [
+            "/Users/guyue/Hubi/tailwind.config.ts"
+        ],
+        "dotenv": [
+            "/Users/guyue/Hubi/scripts/checkDb.ts",
+            "/Users/guyue/Hubi/scripts/cleanDb.ts",
+            "/Users/guyue/Hubi/scripts/initDb.ts",
+            "/Users/guyue/Hubi/scripts/sync.ts",
+            "/Users/guyue/Hubi/scripts/testConnection.ts",
+            "/Users/guyue/Hubi/scripts/verifyData.ts"
+        ],
+        "@t3-oss/env-nextjs": [
+            "/Users/guyue/Hubi/env/server.ts"
+        ],
+        "zod": [
+            "/Users/guyue/Hubi/env/server.ts",
+            "/Users/guyue/Hubi/app/api/graphql/route.ts"
+        ],
+        "@types/next": [
+            "/Users/guyue/Hubi/app/layout.tsx",
+            "/Users/guyue/Hubi/app/page.tsx",
+            "/Users/guyue/Hubi/app/src/components/Header.tsx",
+            "/Users/guyue/Hubi/app/src/components/navbar.tsx",
+            "/Users/guyue/Hubi/app/api/verify-recaptcha/route.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/route.ts",
+            "/Users/guyue/Hubi/app/api/graphql/route.ts"
+        ],
+        "antd": [
+            "/Users/guyue/Hubi/app/page.tsx",
+            "/Users/guyue/Hubi/app/src/components/GrantCard.tsx",
+            "/Users/guyue/Hubi/app/src/components/Header.tsx",
+            "/Users/guyue/Hubi/app/pre-grant/test/page.tsx",
+            "/Users/guyue/Hubi/app/apps/page.tsx"
+        ],
+        "@apollo/client": [
+            "/Users/guyue/Hubi/app/src/lib/apolloClient.ts",
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts",
+            "/Users/guyue/Hubi/app/src/graphql/fragments.ts",
+            "/Users/guyue/Hubi/app/src/graphql/queries.ts",
+            "/Users/guyue/Hubi/app/src/generated/graphql.ts"
+        ],
+        "graphql": [
+            "/Users/guyue/Hubi/app/src/lib/apolloClient.ts",
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts",
+            "/Users/guyue/Hubi/app/src/graphql/fragments.ts",
+            "/Users/guyue/Hubi/app/src/graphql/queries.ts",
+            "/Users/guyue/Hubi/app/src/generated/graphql.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncCurrent.ts",
+            "/Users/guyue/Hubi/app/api/graphql/route.ts"
+        ],
+        "axios": [
+            "/Users/guyue/Hubi/app/src/lib/handleAxiosError.ts",
+            "/Users/guyue/Hubi/app/src/lib/recaptchaService.ts"
+        ],
+        "@types/react": [
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/hooks/useGrantData.ts",
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts",
+            "/Users/guyue/Hubi/app/src/contexts/GrantContext.tsx",
+            "/Users/guyue/Hubi/app/src/components/GrantCard.tsx",
+            "/Users/guyue/Hubi/app/src/components/ReservationList.tsx",
+            "/Users/guyue/Hubi/app/src/components/ReserveButton.tsx",
+            "/Users/guyue/Hubi/app/src/components/HorizontalTimeline/HorizontalTimeline.tsx",
+            "/Users/guyue/Hubi/app/src/components/HorizontalTimeline/TimelineDot.tsx",
+            "/Users/guyue/Hubi/app/src/components/HorizontalTimeline/TimelineLine.tsx",
+            "/Users/guyue/Hubi/app/pre-grant/test/page.tsx",
+            "/Users/guyue/Hubi/app/apps/page.tsx"
+        ],
+        "@tanstack/react-query": [
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/lib/wagmi.ts"
+        ],
+        "wagmi": [
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/lib/wagmi.ts"
+        ],
+        "thirdweb": [
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/lib/thirdweb.ts",
+            "/Users/guyue/Hubi/app/src/components/ConnectButton.tsx",
+            "/Users/guyue/Hubi/app/src/components/ReserveButton.tsx",
+            "/Users/guyue/Hubi/app/pre-grant/test/page.tsx"
+        ],
+        "viem": [
+            "/Users/guyue/Hubi/app/src/lib/providers.tsx",
+            "/Users/guyue/Hubi/app/src/lib/wagmi.ts",
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncCurrent.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncCycles.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncGlobal.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/services/grantService.ts"
+        ],
+        "https-proxy-agent": [
+            "/Users/guyue/Hubi/app/src/lib/recaptchaService.ts"
+        ],
+        "winston": [
+            "/Users/guyue/Hubi/app/src/lib/logger/index.ts"
+        ],
+        "dayjs": [
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts"
+        ],
+        "lodash": [
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts"
+        ],
+        "@types/lodash": [
+            "/Users/guyue/Hubi/app/src/hooks/useReservations.ts"
+        ],
+        "@vercel/postgres": [
+            "/Users/guyue/Hubi/app/src/config/db.ts"
+        ],
+        "redis": [
+            "/Users/guyue/Hubi/app/src/config/redis.ts"
+        ],
+        "react-countup": [
+            "/Users/guyue/Hubi/app/src/components/GrantCard.tsx"
+        ],
+        "react-countdown": [
+            "/Users/guyue/Hubi/app/src/components/GrantCard.tsx"
+        ],
+        "@ant-design/icons": [
+            "/Users/guyue/Hubi/app/pre-grant/test/page.tsx",
+            "/Users/guyue/Hubi/app/apps/page.tsx"
+        ],
+        "cron": [
+            "/Users/guyue/Hubi/app/api/testGrants/sync/cron.ts"
+        ],
+        "@wagmi/core": [
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncCurrent.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncCycles.ts",
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncGlobal.ts"
+        ],
+        "graphql-request": [
+            "/Users/guyue/Hubi/app/api/testGrants/sync/syncCurrent.ts",
+            "/Users/guyue/Hubi/app/api/graphql/route.ts"
+        ]
+    },
+    "invalidFiles": {
+        "/Users/guyue/Hubi/scripts/tsconfig.json": "SyntaxError: /Users/guyue/Hubi/scripts/tsconfig.json: Unexpected token '/', \"// scripts\"... is not valid JSON\n    at parse (<anonymous>)\n    at Object..json (node:internal/modules/cjs/loader:1730:39)\n    at Module.load (node:internal/modules/cjs/loader:1305:32)\n    at Function._load (node:internal/modules/cjs/loader:1119:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)\n    at Module.require (node:internal/modules/cjs/loader:1327:12)\n    at require (node:internal/modules/helpers:136:16)\n    at readJSON (/Users/guyue/.nvm/versions/node/v23.4.0/lib/node_modules/depcheck/dist/utils/index.js:24:10)\n    at parseTTypeScript (/Users/guyue/.nvm/versions/node/v23.4.0/lib/node_modules/depcheck/dist/special/ttypescript.js:16:41)"
+    },
+    "invalidDirs": {
+
+    }
+}

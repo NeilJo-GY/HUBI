@@ -1,0 +1,9 @@
+# codegen.yml
+schema: 'https://api.studio.thegraph.com/query/92345/hubi/version/latest'
+documents: 'app/src/graphql/**/*.ts'
+generates:
+  app/src/generated/graphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'

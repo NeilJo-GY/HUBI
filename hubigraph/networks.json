@@ -1,8 +1,0 @@
-{
-  "sepolia": {
-    "ReservePreGrant": {
-      "address": "0x54940600c7EBb651940b14Af13c06043ae709774",
-      "startBlock": 6807451
-    }
-  }
-}

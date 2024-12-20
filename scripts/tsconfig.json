@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "../dist/scripts",
+    "rootDir": "..",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "../*"
+      ]
+    }
+  },
+  "include": [
+    "./**/*.ts",
+    "check-dependencies.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
