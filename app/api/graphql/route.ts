@@ -7,7 +7,6 @@
 import { GraphQLClient } from 'graphql-request';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-
 import { env } from '@/env/server';
 
 // replace this with your Subgrah URL
