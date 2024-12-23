@@ -1,3 +1,5 @@
+// app/api/testGrants/sync/syncCurrent.ts
+
 import { readContract, readContracts } from '@wagmi/core';
 import { config } from '@/app/src/lib/wagmi';
 import { pregrantABI } from '@/app/src/lib/abi';
@@ -5,6 +7,7 @@ import { RedisService } from '../services/redisService';
 import { GrantData } from '@/app/src/contexts/types';
 import { formatEther } from 'viem';
 import { GraphQLClient } from 'graphql-request';
+import NodeCache from "node-cache";
 
 // 定义 GraphQL 响应类型
 interface GrantReservationCount {
@@ -40,11 +43,18 @@ const GRANT_RESERVATION_COUNT_QUERY = `
   }
 `;
 
+// 缓存机制
+const cache = new NodeCache({ stdTTL: 60 }); // 缓存 60 秒
+
 async function fetchReservationCount(grantId: string): Promise<number> {
   try {
     const data = await graphQLClient.request<GraphQLResponse>(GRANT_RESERVATION_COUNT_QUERY, {
       grantId: grantId,
     });
+
+    if (!data || !data.grantReservationCounts || data.grantReservationCounts.length === 0) {
+      throw new Error(`GraphQL returned invalid data: ${JSON.stringify(data)}`);
+    }
 
     return Number(data.grantReservationCounts[0]?.reservationCount || '0');
   } catch (error) {
@@ -58,6 +68,13 @@ async function fetchReservationCount(grantId: string): Promise<number> {
  */
 export async function syncCurrentGrant() {
   try {
+    // 检查缓存
+    const cachedGrant = cache.get<GrantData>("currentGrant");
+    if (cachedGrant) {
+      console.log("Returning cached grant data:", cachedGrant);
+      return cachedGrant;
+    }
+
     // 1. 从链上批量获取当前状态数据
     const contractsResult = await readContracts(config, {
       contracts: [

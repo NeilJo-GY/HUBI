@@ -23,6 +23,7 @@ export default function PreGrant() {
     currentGrant,
     isLoading: grantsLoading,
     error: grantsError,
+    refetch: refetchGrants, // 将 refetch 函数传递给 GrantCard
   } = useGrantData();
 
   /*
@@ -168,7 +169,7 @@ export default function PreGrant() {
         className="container mx-auto px-4 flex justify-center"
         style={{
           position: 'fixed',
-          top: '120px',
+          top: '100px',
           left: 0,
           right: 0,
           zIndex: 30, // 设置 z-index 确保其在其他元素之上
@@ -199,22 +200,21 @@ export default function PreGrant() {
       </div>
 
       <div
-        className="flex-grow flex flex-col items-center justify-center text-center relative"
+        className="fixed inset-0 flex flex-col items-center justify-start text-center"
         style={{
-          paddingTop: '128px',
-          overflowY: 'auto', // Enable vertical scrolling
+          top: '200px',
+          overflowY: 'auto',
         }}
       >
-        {/* 渲染 GrantCard */}
-        <div className="relative w-full max-w-5xl mt-24">
+        <div className="relative w-full max-w-5xl flex flex-col items-center space-y-10 mt-4 mb-4">
           <GrantCard
             selectedGrantId={selectedGrantIndex}
             address={address}
+            refreshData={refetchGrants}
           />
+          <RecentReservationList reservations={reservations} />
         </div>
-        {/* 将 reservations 作为属性传递给 RecentReservationList */}
-        <RecentReservationList reservations={reservations} />
-      </div >
+      </div>
     </div >
   );
 }

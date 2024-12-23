@@ -10,9 +10,10 @@ import { Connect } from "@/app/src/components/ConnectButton";
 interface GrantCardProps {
   selectedGrantId: number;  // 添加一个 prop 来选择当前显示的 grant
   address?: string;
+  refreshData: () => void;
 }
 
-const GrantCard: React.FC<GrantCardProps> = ({ selectedGrantId, address }) => {
+const GrantCard: React.FC<GrantCardProps> = ({ selectedGrantId, address, refreshData }) => {
   const { grants, isLoading } = useGrantData();
   const { userReservations } = useReservations({ userAddress: address });
 
@@ -108,7 +109,8 @@ const GrantCard: React.FC<GrantCardProps> = ({ selectedGrantId, address }) => {
           </Button>
         );
       } else {
-        return <ReserveButton />;
+        // ReserveButton 组件完成后刷新数据
+        return <ReserveButton onReserveSuccess={refreshData} />;
       }
     } else if (isPastGrant) {
       return (

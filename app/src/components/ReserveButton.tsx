@@ -19,7 +19,11 @@ declare global {
     }
 }
 
-export function ReserveButton() {
+interface ReserveButtonProps {
+    onReserveSuccess: () => void;
+}
+
+export function ReserveButton({ onReserveSuccess }: ReserveButtonProps) {
     const wallet = useActiveWallet();
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -146,10 +150,27 @@ export function ReserveButton() {
                     console.log("Transaction Sent:", tx);
                     alert("Transaction Sent!");
                 }}
-                onTransactionConfirmed={(receipt) => {
+                onTransactionConfirmed={async (receipt) => {
                     console.log("Transaction Confirmed:", receipt);
                     alert("Transaction Confirmed!");
                     setIsLoading(false);
+                    try {
+                        const response = await fetch('/api/testGrants/sync/currentGrant', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`Failed to sync grant data: ${response.statusText}`);
+                        }
+
+                        console.log('Grant data successfully synced with Redis.');
+                        onReserveSuccess(); // 触发父组件的刷新回调
+                    } catch (error) {
+                        console.error('Error syncing grant data:', error);
+                    }
                 }}
                 onError={(err) => {
                     alert(err.message);

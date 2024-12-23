@@ -11,11 +11,18 @@ export class RedisService {
       grantTotalReserved: grant.grantTotalReserved // 转换为 ETH 单位的字符串
     };
 
-    await client.set(
-      'current_grant',
-      JSON.stringify(grantToStore),
-      { EX: 86400 } // 1天过期
-    )
+    let retries = 3; // 最多重试 3 次
+    while (retries > 0) {
+      try {
+        await client.set('current_grant', JSON.stringify(grantToStore), { EX: 86400 });
+        console.log('Successfully set current grant in Redis:', grantToStore);
+        break; // 成功后退出循环
+      } catch (error) {
+        retries -= 1;
+        console.error(`Error setting current grant, retries left: ${retries}`, error);
+        if (retries === 0) throw error; // 超过重试次数抛出错误
+      }
+    }
   }
 
   static async getCurrentGrant(): Promise<GrantData | null> {

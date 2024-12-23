@@ -50,8 +50,8 @@ const RecentReservationList: React.FC<RecentReservationListProps> = ({ reservati
 
 
     return (
-        <div className="mt-12 mb-8 text-left w-full max-w-lg bg-gray-900 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-4 text-purple-400">Recent Reservations:</h3>
+        <div className="mt-12 mb-8 text-left w-full max-w-lg bg-gray-900 rounded-lg px-4 py-2 shadow-lg">
+            <h3 className="text-xl font-bold mb-2 text-purple-400">Recent Reservations:</h3>
             {renderedReservations}
         </div>
     );

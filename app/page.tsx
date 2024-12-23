@@ -11,7 +11,7 @@ export default function Home() {
           AI-Driven UBI Grants
         </h1>
         <p className="text-xl text-gray-600 mb-10">
-          Empowering You to Work and Create Freely.
+          Work and Create Freely.
         </p>
         <Button href="/pre-grant/test" type="primary" size="large" className="bg-black hover:bg-gray-800">
           Apply for HUBI Grant
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="mt-20 text-left max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-gray-900">Introducing HUBI</h2>
           <h3 className="text-2xl font-semibold mb-4 text-gray-900">Human-AI Collaboration for an Inclusive Future</h3>
-          <Image src="/image.png" alt="Logo" width={900} height={50} />
+          <Image src="/image.png" alt="Logo" width={900} height={500} />
           <p className="text-lg text-gray-700 mt-4 mb-4">
             The rise of AI has sparked concerns about potential job losses and the widening gap between the rich and poor. Many fear that while AI increases productivity, it may not create enough new jobs to replace those displaced by AI. This could lead to mass unemployment, furthering inequality as the wealthy benefit while those who lose their jobs face increased poverty. Beyond economic worries, people also seek fulfillment and purpose in their work.
           </p>

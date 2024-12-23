@@ -4,8 +4,8 @@ import { Providers } from '@/app/src/lib/providers';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Mage',
-    default: 'Mage, Work and Create Freely',
+    template: '%s | HUBI',
+    default: 'HUBI, Work and Create Freely',
   },
   description: "UBI Grants Powered by AI",
   keywords: ['UBI', 'Remote', 'Self-organization'],
